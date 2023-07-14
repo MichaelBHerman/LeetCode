@@ -10,7 +10,6 @@ var strStr = function(haystack, needle) {
 
     for (let i = 0; i <= maxIdxToCheck; i++) {
       let subString = haystack.substring(i, i + n)
-      console.log(subString)
       if (subString === needle) {
         return i;
       }
