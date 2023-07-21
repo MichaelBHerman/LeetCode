@@ -7,7 +7,6 @@ class Solution {
                specialList.add(nums[i]);
            }
        }
-       System.out.println(specialList);
        int sumOfSquares = 0;
        for (int special : specialList) {
            sumOfSquares += special * special;
