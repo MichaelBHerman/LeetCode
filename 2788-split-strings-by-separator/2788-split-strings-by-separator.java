@@ -4,7 +4,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         for (String s : words) {
             char[] arr = s.toCharArray();
-            for (int i =0; i < arr.length; i++) {
+            for (int i = 0; i < arr.length; i++) {
                 if (arr[i] != separator) {
                     sb.append(arr[i]);
                     if (i == arr.length - 1) {
@@ -21,6 +21,7 @@ class Solution {
                 }
             }
         }
+        System.out.println(ans);
         return ans;
     }
 }
