@@ -12,7 +12,9 @@ class Solution {
             for (int j = i; j < nums.length; j++) {
                 set2.add(nums[j]);
                 if (set2.size() == distinctElements) {
-// As the condition hits, all subarrays to the right will also satisfy the condition, so add (nums.length-j) and then break.
+// When this condition is true, all subarrays to the right will also satisfy the condition and be "complete".
+// nums.length - j will equal the subarray we just verified that first met the "complete" condition, plus the remaining subarrays left.
+// we know there can't possibly be more distinct characters left at this point (because we've already determined the maximum distinct characters by looping through all characters in nums and adding them so set1.  And we've hit that here at J, So any remaining iterations of J equals another subarray that meets the criteria.                   
                     completeSubArrayCount += nums.length - j;
                     break;
                 }
