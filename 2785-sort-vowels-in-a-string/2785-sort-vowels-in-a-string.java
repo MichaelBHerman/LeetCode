@@ -1,25 +1,22 @@
 class Solution {
     public String sortVowels(String s) {
-        int n = s.length();
-        ArrayList<Character> vow = new ArrayList<>();
-        ArrayList<Integer> pos = new ArrayList<>();
-        
-        for (int i = 0; i < n; i++) {
-            char ch = s.charAt(i);
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || 
-ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') { // condition to check for vowel
-                vow.add(ch);
-                pos.add(i); // storing positions of vowel
+        ArrayList<Character> vowelsList = new ArrayList<>();
+        ArrayList<Integer> vowelPositions = new ArrayList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                    c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                vowelsList.add(c);
+                vowelPositions.add(i);
             }
         }
-        
-        Collections.sort(vow);
-        
+        Collections.sort(vowelsList);
         char[] answer = s.toCharArray();
-        for (int i = 0; i < pos.size(); i++) {
-            answer[pos.get(i)] = vow.get(i);
+
+        for (int i = 0; i < vowelPositions.size(); i++) {
+            answer[vowelPositions.get(i)] = vowelsList.get(i);
         }
-        
         return new String(answer);
     }
 }
