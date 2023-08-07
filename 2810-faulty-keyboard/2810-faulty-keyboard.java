@@ -7,11 +7,9 @@ class Solution {
                 sb.append(arr[i]);
             }
             else {
-            
                 String temp = String.valueOf(sb.reverse());
                 sb.setLength(0);
                 sb.append(temp);
-
             }
         }
         return sb.toString();
