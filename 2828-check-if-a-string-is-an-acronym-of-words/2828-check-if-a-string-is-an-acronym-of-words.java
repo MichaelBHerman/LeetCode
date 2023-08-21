@@ -5,11 +5,8 @@ class Solution {
             char[] arr = words.get(i).toCharArray();
             firstCharacters[i] = arr[0];
         }
-        StringBuilder sb = new StringBuilder();
-        for (char c: firstCharacters) {
-            sb.append(c);
-        }
-        if (sb.toString().equals(s)) {
+        String str = String.valueOf(firstCharacters);
+        if (str.equals(s)) {
             return true;
         }
         return false;
