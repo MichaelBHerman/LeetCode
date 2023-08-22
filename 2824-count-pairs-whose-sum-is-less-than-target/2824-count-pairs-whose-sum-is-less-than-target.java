@@ -7,6 +7,9 @@ class Solution {
                 if (nums.get(i) + nums.get(j) < target) {
                     pairs++;
                 }
+                if (nums.get(i) + nums.get(j) >= target) {
+                    break;
+                }
             }
         }
         return pairs;
