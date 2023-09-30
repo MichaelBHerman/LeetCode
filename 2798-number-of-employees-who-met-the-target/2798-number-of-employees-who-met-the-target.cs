@@ -2,11 +2,15 @@ public class Solution {
     public int NumberOfEmployeesWhoMetTarget(int[] hours, int target)
         {
             int metTargetCount = 0;
-            foreach (int n in hours)
+            int l = hours.Length;
+            Array.Sort(hours);
+    
+            for (int i = 0; i < hours.Length; i++)
             {
-                if (n >= target)
+                if (hours[i] >= target)
                 {
-                    metTargetCount++;
+                    metTargetCount = l - i;
+                    return metTargetCount;
                 }
             }
             return metTargetCount;
