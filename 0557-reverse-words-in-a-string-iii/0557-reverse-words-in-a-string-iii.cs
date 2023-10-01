@@ -17,7 +17,7 @@ public class Solution {
                 }
                 properOrder += splitted[i];
             }
-            Console.WriteLine(properOrder);
+        
             return properOrder;
         }
 }
