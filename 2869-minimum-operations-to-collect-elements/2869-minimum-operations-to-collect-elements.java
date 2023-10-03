@@ -1,24 +1,14 @@
 class Solution {
     public int minOperations(List<Integer> nums, int k) {
         int operationCount = 0;
-        List<Integer> range = new ArrayList<>();
-        List<Integer> numsCollected = new ArrayList<>();
-        int i = 1;
-        while (i <= k) {
-            range.add(i);
-            i++;
-        }
-        System.out.println(range);
-        for (int j = nums.size() - 1; j >= 0; j--) {
-            if (!numsCollected.contains(nums.get(j))) {
-                if (range.contains(nums.get(j))) {
-                    numsCollected.add(nums.get(j));
-                }
-            }
+        Set<Integer> set = new HashSet<>();
+        for (int i = nums.size() - 1; i >= 0; i--) {
             operationCount++;
-            Collections.sort(numsCollected);
-            if (numsCollected.equals(range)) {
-                return operationCount;
+            if (nums.get(i) <= k) {
+                set.add(nums.get(i));
+            }
+            if (set.size() == k) {
+                break;
             }
         }
         return operationCount;
